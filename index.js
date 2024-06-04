@@ -21,9 +21,7 @@ function createEmployeeRecords(employees){
   let employeeList = employees.map((employee) => createEmployeeRecord(employee))
   return employeeList
 }
-// dateStamp = "YYYY-MM-DD HHMM"
-// need to break into an array [ [YYYY-MM-DD], [HHMM]]
-// destructing of string
+
 function createTimeInEvent (dateStamp) {
   let [date, time] = dateStamp.split(" ")
   let clockIn = {
@@ -32,6 +30,18 @@ function createTimeInEvent (dateStamp) {
     date: date
   }
   this.timeInEvents.push(clockIn)
+
+  return this
+}
+
+function createTimeOutEvent (dateStamp) {
+  let [date, time] = dateStamp.split(" ")
+  let clockOut = {
+    type: "TimeOut",
+    hour: parseInt(time, 10),
+    date: date
+  }
+  this.timeOutEvents.push(clockOut)
 
   return this
 }
