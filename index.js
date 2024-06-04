@@ -9,10 +9,10 @@ function createEmployeeRecord(employee) {
     timeOutEvents: [],
   }
 }
-employees = [
-  ["moe", "sizlak", "barkeep", 2],
-  ["bartholomew", "simpson", "scamp", 3]
-]
+// employees = [
+//   ["moe", "sizlak", "barkeep", 2],
+//   ["bartholomew", "simpson", "scamp", 3]
+// ]
 
 // this is an array of arrays
 // for each employee i want to createEmployeeRecord
@@ -21,6 +21,22 @@ function createEmployeeRecords(employees){
   let employeeList = employees.map((employee) => createEmployeeRecord(employee))
   return employeeList
 }
+// dateStamp = "YYYY-MM-DD HHMM"
+// need to break into an array [ [YYYY-MM-DD], [HHMM]]
+// destructing of string
+function createTimeInEvent (dateStamp) {
+  let [date, time] = dateStamp.split(" ")
+  let clockIn = {
+    type: "TimeIn",
+    hour: parseInt(time, 10),
+    date: date
+  }
+  this.timeInEvents.push(clockIn)
+
+  return this
+}
+
+
 
 
 
