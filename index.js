@@ -1,4 +1,3 @@
-// employee = [ fName, lName, title, pay]
 function createEmployeeRecord(employee) {
   return {
     firstName: employee[0],
@@ -9,14 +8,7 @@ function createEmployeeRecord(employee) {
     timeOutEvents: [],
   }
 }
-// employees = [
-//   ["moe", "sizlak", "barkeep", 2],
-//   ["bartholomew", "simpson", "scamp", 3]
-// ]
 
-// this is an array of arrays
-// for each employee i want to createEmployeeRecord
-// return new array with changes...map
 function createEmployeeRecords(employees){
   let employeeList = employees.map((employee) => createEmployeeRecord(employee))
   return employeeList
@@ -81,7 +73,6 @@ const allWagesFor = function () {
 }
 
 function findEmployeeByFirstName (srcArray, firstNameString) {
-  // matching record or undefined (find method)
 
   return srcArray.find((employeeRecord) => employeeRecord.firstName = firstNameString)
 }
