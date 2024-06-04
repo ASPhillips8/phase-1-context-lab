@@ -59,10 +59,6 @@ function wagesEarnedOnDate (enteredDate) {
 
   return hoursWork * payRate
 }
-
-
-
-
 /*
  We're giving you this function. Take a look at it, you might see some usage
  that's new and different. That's because we're avoiding a well-known, but
@@ -84,3 +80,14 @@ const allWagesFor = function () {
     return payable
 }
 
+function findEmployeeByFirstName (srcArray, firstNameString) {
+  // matching record or undefined (find method)
+
+  return srcArray.find((employeeRecord) => employeeRecord.firstName = firstNameString)
+}
+
+function calculatePayroll (employeeRecords) {
+  let payRoll = employeeRecords.reduce((total, employeeRecord) => total + allWagesFor.call(employeeRecord), 0)
+
+  return payRoll
+}
